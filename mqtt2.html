@@ -45,7 +45,7 @@
 		  </div>
 		</nav>
 		
-		<h1> Smart Room </h1>
+		<h1> Smart Home </h1>
 	
 		<img src="https://i1.wp.com/smarthome.city/wp-content/uploads/2016/05/resp-feature.jpg" width="100%"/>
 		<hr/>
@@ -61,8 +61,18 @@
 				  </div>
 				</div>
 			</div>
-		<div class="col-md-4">
+			<div class="col-md-4">
 				<div class="panel panel-warning">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Status</h3>
+				  </div>
+				  <div class="panel-body">
+					<span id="text" class="mqtt-value"></span>
+				  </div>
+				</div>
+			</div>
+		<div class="col-md-4">
+				<div class="panel panel-info">
 				  <div class="panel-heading">
 					<h3 class="panel-title">Control</h3>
 				  </div>
@@ -120,7 +130,7 @@
 		function onMessageArrived(message) {
 		  console.log("onMessageArrived:"+message.payloadString);
 		  switch(message.destinationName){
-			case "kmitl/cie/g0/temp": $("#temp").html(message.payloadString); break;
+			case "kmitl/cie/g3/text": $("#text").html(message.payloadString); break;
 			case "kmitl/cie/g3/temp": $("#ice").html(message.payloadString); break;
 			case "kmitl/cie/random/x1": $("#x1").html(message.payloadString); break;
 			case "kmitl/cie/random/x2": $("#x2").html(message.payloadString); break;
