@@ -54,10 +54,10 @@
 			<div class="col-md-4">
 				<div class="panel panel-warning">
 				  <div class="panel-heading">
-					<h3 class="panel-title">Temperature in CIE Lab</h3>
+					<h3 class="panel-title">Neighbour Home</h3>
 				  </div>
 				  <div class="panel-body">
-					<span id="temp" class="mqtt-value">0</span>°C
+					<span id="temp" class="mqtt-value">-</span>
 				  </div>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 			<div class="col-md-4">
 				<div class="panel panel-info">
 				  <div class="panel-heading">
-					<h3 class="panel-title">From group 3</h3>
+					<h3 class="panel-title">Tempulature In Home</h3>
 				  </div>
 				  <div class="panel-body">
 					<span id="ice" class="mqtt-value">0</span>°C
@@ -180,7 +180,7 @@
 		function controlFan(){
 			var fake = Math.floor(20+Math.random()*10);
 			message = new Paho.MQTT.Message("1");
-			message.destinationName = "kmitl/cie/g3/fan";
+			message.destinationName = "kmitl/cie/g55/fan";
 			client.send(message);
 		}
 	</script>
